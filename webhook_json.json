@@ -1,6 +1,6 @@
 {
     "name": "my-webhook",
-    "targetPipeline": "prodigy-githubAsSrc-pipeline",
+    "targetPipeline": "githubtest2-pipeline",
     "targetAction": "Source",
     "filters": [
         {
@@ -8,6 +8,6 @@
           "matchEquals": "refs/heads/{Branch}"
         }
     ],
-    "authentication": "GITHUB_HMAC",
-    "authenticationConfiguration": {"SecretToken":"secrets"}
+    "authentication": "UNAUTHENTICATED",
+    "authenticationConfiguration": {}
 }
