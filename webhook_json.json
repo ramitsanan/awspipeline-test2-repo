@@ -8,6 +8,6 @@
           "matchEquals": "refs/heads/{Branch}"
         }
     ],
-    "authentication": "UNAUTHENTICATED",
+    "authentication": "UNAUTHENTICATEDl",
     "authenticationConfiguration": {}
 }
