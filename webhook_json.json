@@ -1,13 +1,22 @@
-{
-    "name": "my-webhook",
-    "targetPipeline": "githubtest2-pipeline",
-    "targetAction": "Source",
-    "filters": [
-        {
-          "jsonPath": "$.ref", 
-          "matchEquals": "refs/heads/{Branch}"
-        }
-    ],
-    "authentication": "UNAUTHENTICATEDl",
-    "authenticationConfiguration": {}
-}
+// { 
+//     "Webhook": { 
+//       "Type": "AWS::CodePipeline::Webhook", 
+//       "Properties": {
+//         "AuthenticationConfiguration": { 
+//           "SecretToken": "secret" 
+//         }, 
+//         "Filters": [ 
+//           { 
+//             "JsonPath": "$.ref", 
+//             "MatchEquals": "refs/heads/{Branch}" 
+//           } 
+//         ], 
+//         "Authentication": "GITHUB_HMAC",
+//         "TargetPipeline": { "Ref" : "prismic-pipeline" }, 
+//         "TargetAction": "Source", 
+//         "Name": "RAMITSANANWEBHOOK", 
+//         "TargetPipelineVersion": { "Fn::GetAtt" : [ "WebhookPipeline", "Version" ] },
+//         "RegisterWithThirdParty": "true" 
+//       } 
+//     } 
+//   }

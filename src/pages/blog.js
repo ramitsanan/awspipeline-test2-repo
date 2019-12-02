@@ -9,6 +9,7 @@ import blogFeatureImage from "../images/BlogFeature.jpg"
 import blogPostImage1 from "../images/blogPostImage1.png"
 import blogPostImage2 from "../images/blogPostImage2.png"
 import blogPostImage3 from "../images/blogPostImage3.png"
+import { graphql } from 'gatsby'
 
 const StyledBlogPage = styled.div`
 	padding-top: 20px;
@@ -95,12 +96,26 @@ const StyledNav = styled.nav`
 	}
 `
 
-const BlogPage = () => (
+export const query = graphql`
+query MyQuery {
+	prodigy {
+		prismic {
+			results{
+				data{
+					author_name
+				}
+			}
+		}
+	}
+}
+`
+
+const BlogPage = ({data}) => (
 	<Layout>
 		<StyledBlogPage>
 			<SEO title="Blog" />
 
-			<h1>Prodigy Blog</h1>
+			<h1>Prodigy Blog ({data.prodigy.prismic.results[14].data.author_name})</h1>
 
 			<FeaturedBlogPost>
 				<div className="contentWrapper">
