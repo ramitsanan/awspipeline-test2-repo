@@ -115,7 +115,7 @@ const BlogPage = ({data}) => (
 		<StyledBlogPage>
 			<SEO title="Blog" />
 
-			<h1>Prodigy Blog ({data.prodigy.prismic.results[16].data.author_name}) - testing phase</h1>
+			<h1>Prodigy Blog ({data.prodigy.prismic.results.map(result => (result.data.author_name != null) ? `${result.data.author_name},` : 'null,')})</h1>
 
 			<FeaturedBlogPost>
 				<div className="contentWrapper">
