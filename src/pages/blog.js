@@ -100,8 +100,8 @@ export const query = graphql`
 query MyQuery {
 	prodigy {
 		prismic {
-			results{
-				data{
+			results {
+				data {
 					author_name
 				}
 			}
@@ -115,7 +115,7 @@ const BlogPage = ({data}) => (
 		<StyledBlogPage>
 			<SEO title="Blog" />
 
-			<h1>Prodigy Blog ({data.prodigy.prismic.results[14].data.author_name}) - testing phase</h1>
+			<h1>Prodigy Blog ({data.prodigy.prismic.results[16].data.author_name}) - testing phase</h1>
 
 			<FeaturedBlogPost>
 				<div className="contentWrapper">
